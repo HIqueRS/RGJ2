@@ -12,10 +12,19 @@ public class Movement : MonoBehaviour
 
     private string horizontal;
     private string vertical;
+
+    public int flower;
+
+    
+    private bool atchoo;
+
+    private Reset reset;
     // Start is called before the first frame update
     void Start()
     {
         finalPosition = transform.position;
+
+        reset = GameObject.FindGameObjectWithTag("Canvas").GetComponent<Reset>();
 
         switch ( player)
         {
@@ -28,61 +37,71 @@ public class Movement : MonoBehaviour
                 vertical = "Vertical_2";
                 break;
         }
+
+        atchoo = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-     
-        if(Vector3.Distance(finalPosition,transform.position) < 0.2)
+        Debug.DrawRay(transform.position, dir);
+        if (!atchoo)
         {
-            transform.position = finalPosition;
 
-            dir.x = Input.GetAxisRaw(horizontal);
-            dir.y = Input.GetAxisRaw(vertical);
-
-            if (dir.x != 0)
+            if(Vector3.Distance(finalPosition,transform.position) < 0.2)
             {
-                dir.y = 0;
-                RaycastHit2D hit;
-                hit = Physics2D.Raycast(transform.position +  new Vector3(0.6f,0.6f,0.6f),dir,1f);
-                
+                transform.position = finalPosition;
+
+                dir.x = Input.GetAxisRaw(horizontal);
+                dir.y = Input.GetAxisRaw(vertical);
+
+                if (dir.x != 0)
+                {
+                    dir.y = 0;
+                    RaycastHit2D hit;
+                   
+                    
+                    hit = Physics2D.Raycast(transform.position ,dir,1f);
+                    Debug.DrawRay(transform.position , dir);
                 
 
-                if(!hit)
-                {
-                    finalPosition = finalPosition + dir;
-                }
-                else if(hit.transform.gameObject.tag == "Ground")
-                {
-                    finalPosition = finalPosition + dir;
-                }
+                    if(!hit)
+                    {
+                        finalPosition = finalPosition + dir;
+                    }
+                    else if(hit.transform.gameObject.tag == "Ground")
+                    {
+                        finalPosition = finalPosition + dir;
+                    }
+
                
                 
-            }
-            else if(dir.y != 0)
-            {
-                dir.x = 0;
-                RaycastHit2D hit;
-                hit = Physics2D.Raycast(transform.position + new Vector3(0.6f, 0.6f, 0.6f), dir, 1f);
+                }
+                else if(dir.y != 0)
+                {
+                    dir.x = 0;
+                    RaycastHit2D hit;
+                    hit = Physics2D.Raycast(transform.position, dir, 1f);
+                    Debug.DrawRay(transform.position , dir);
 
-                if (!hit)
-                {
-                    finalPosition = finalPosition + dir;
-                }
-                else if (hit.transform.gameObject.tag == "Ground")
-                {
-                    finalPosition = finalPosition + dir;
-                }
+                    if (!hit)
+                    {
+                        finalPosition = finalPosition + dir;
+                    }
+                    else if (hit.transform.gameObject.tag == "Ground")
+                    {
+                        finalPosition = finalPosition + dir;
+                    }
                 
 
+                }
+
+
+
             }
-
-
-
-        }
        
-        transform.position = Vector3.MoveTowards(transform.position, finalPosition, 5 * Time.deltaTime);
+            transform.position = Vector3.MoveTowards(transform.position, finalPosition, 5 * Time.deltaTime);
+        }
         
         
     }
@@ -90,6 +109,13 @@ public class Movement : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log(collision.transform.gameObject.tag);
+        
+        if(collision.transform.gameObject.GetComponent<TileFlower>().ChangeFlower(flower) != flower)
+        {
+            atchoo = true;
+            reset.StartUI();
+        }
+
+
     }
 }
