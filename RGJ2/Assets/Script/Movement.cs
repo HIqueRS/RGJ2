@@ -19,12 +19,19 @@ public class Movement : MonoBehaviour
     private bool atchoo;
 
     private Reset reset;
+
+    private WinCondicional win;
+
+    private bool wining;
     // Start is called before the first frame update
     void Start()
     {
         finalPosition = transform.position;
 
         reset = GameObject.FindGameObjectWithTag("Canvas").GetComponent<Reset>();
+        win = GameObject.FindGameObjectWithTag("Canvas").GetComponent<WinCondicional>();
+
+        wining = false;
 
         switch ( player)
         {
@@ -45,6 +52,7 @@ public class Movement : MonoBehaviour
     void Update()
     {
         Debug.DrawRay(transform.position, dir);
+        if(!wining)
         if (!atchoo)
         {
 
@@ -114,8 +122,15 @@ public class Movement : MonoBehaviour
         {
             atchoo = true;
             reset.StartUI();
+            
         }
 
+        if(win.Atualize() == 1)
+        {
+            wining = true;
+        }
+
+        
 
     }
 }

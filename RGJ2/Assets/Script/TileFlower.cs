@@ -5,7 +5,7 @@ using UnityEngine;
 public class TileFlower : MonoBehaviour
 {
     public GameObject[] flower;
-    private bool[] active_flower;
+    public bool[] active_flower;
 
     // Start is called before the first frame update
     void Start()

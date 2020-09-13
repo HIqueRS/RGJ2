@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1344099353242891666}
   - component: {fileID: 1344099353242891667}
   - component: {fileID: 1344099353242891372}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Chao
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -27,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1344099353242891664}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -551.90027, y: -284.0906, z: 172.25}
+  m_LocalPosition: {x: -551.90027, y: -284.0906, z: 2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1344099354370969096}
@@ -126,6 +126,7 @@ MonoBehaviour:
   flower:
   - {fileID: 1344099354370969097}
   - {fileID: 1344099353906674226}
+  active_flower: 
 --- !u!1 &1344099353906674226
 GameObject:
   m_ObjectHideFlags: 0
