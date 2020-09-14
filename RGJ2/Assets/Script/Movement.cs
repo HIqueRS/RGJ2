@@ -25,6 +25,11 @@ public class Movement : MonoBehaviour
     private Passing parent;
 
     private bool wining;
+
+    public SpriteRenderer sprite_atual;
+    public Sprite sprite_cima;
+    public Sprite sprite_baixo;
+    public Sprite sprite_lado;
     // Start is called before the first frame update
     void Start()
     {

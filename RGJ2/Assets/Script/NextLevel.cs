@@ -10,7 +10,7 @@ public class NextLevel : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        conf.actual_stage = 4;
+        conf.actual_stage = 1;
     }
 
     // Update is called once per frame
@@ -24,7 +24,7 @@ public class NextLevel : MonoBehaviour
         conf.actual_stage += 1;
        
 
-        GameObject instance = Resources.Load<GameObject>("test/Stage" + conf.actual_stage);
+        GameObject instance = Resources.Load<GameObject>("Stages/Stage"+conf.actual_stage );
 
        if(instance == null)
        {
@@ -32,9 +32,12 @@ public class NextLevel : MonoBehaviour
        }else
        {
             Destroy(actual_stage);
-            Instantiate(instance);
-           actual_stage = instance;
-       }
+
+            //actual_stage.SetActive(false);
+           
+            actual_stage = Instantiate(instance);
+
+        }
 
        
     }
