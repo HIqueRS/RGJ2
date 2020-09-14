@@ -12,4 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0cc3e343a7c26f46842605d2c4e4461, type: 3}
   m_Name: Config
   m_EditorClassIdentifier: 
-  actual_stage: 27
+  actual_stage: 3
+  in_game: 1
+  win: 0
+  acho_1: 0
+  acho_2: 0

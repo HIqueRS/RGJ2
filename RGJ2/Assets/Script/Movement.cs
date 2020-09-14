@@ -30,6 +30,8 @@ public class Movement : MonoBehaviour
     public Sprite sprite_cima;
     public Sprite sprite_baixo;
     public Sprite sprite_lado;
+
+    public Configs config;
     // Start is called before the first frame update
     void Start()
     {
@@ -83,6 +85,7 @@ public class Movement : MonoBehaviour
                     hit = Physics2D.Raycast(transform.position ,dir,1f);
                     Debug.DrawRay(transform.position , dir);
                 
+                    
 
                     if(!hit)
                     {
@@ -93,7 +96,16 @@ public class Movement : MonoBehaviour
                         finalPosition = finalPosition + dir;
                     }
 
-               
+                    if(dir.x > 0)
+                    {
+                            sprite_atual.sprite = sprite_lado;
+                            sprite_atual.flipX = true;
+                    }
+                    else
+                    {
+                            sprite_atual.sprite = sprite_lado;
+                            sprite_atual.flipX = false;
+                        }
                 
                 }
                 else if(dir.y != 0)
@@ -111,15 +123,25 @@ public class Movement : MonoBehaviour
                     {
                         finalPosition = finalPosition + dir;
                     }
-                
 
-                }
+                        if (dir.y > 0)
+                        {
+                            sprite_atual.sprite = sprite_cima;
+                            
+                        }
+                        else
+                        {
+                            sprite_atual.sprite = sprite_baixo;
+                            
+                        }
+
+                    }
 
 
 
             }
        
-            transform.position = Vector3.MoveTowards(transform.position, finalPosition, 5 * Time.deltaTime);
+            transform.position = Vector3.MoveTowards(transform.position, finalPosition, 4 * Time.deltaTime);
         }
         
         
@@ -133,7 +155,7 @@ public class Movement : MonoBehaviour
         {
             atchoo = true;
             reset.StartUI();
-            
+            config.Set_ingame(false);//hmmmm aquii eu já posso passar quem é quem
         }
 
         if(win.Atualize() == 1)

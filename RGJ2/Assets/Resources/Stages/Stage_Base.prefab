@@ -956,6 +956,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ui: {fileID: 615352146720540020}
   PaiDasTile: {fileID: 8338460605347945402}
+  config: {fileID: 11400000, guid: 138635381741cc14c8e12316a4a6668c, type: 2}
 --- !u!114 &9078027541214260412
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1260,6 +1261,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 11400000, guid: 138635381741cc14c8e12316a4a6668c, type: 2}
+        m_MethodName: Set_ingame
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!1 &8338460605347945402
 GameObject:
   m_ObjectHideFlags: 0
@@ -1506,6 +1518,17 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 11400000, guid: 138635381741cc14c8e12316a4a6668c, type: 2}
+        m_MethodName: Set_ingame
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
         m_CallState: 2
 --- !u!1 &8964534946194653014
 GameObject:

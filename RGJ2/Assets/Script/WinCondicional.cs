@@ -14,6 +14,8 @@ public class WinCondicional : MonoBehaviour
 
     public GameObject PaiDasTile;
 
+    public Configs config;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -70,6 +72,7 @@ public class WinCondicional : MonoBehaviour
             if(flor1 == tile.Length/2)
             {
                 ui.SetActive(true);
+                config.Set_ingame(false);
                 return 1;
             }
         }

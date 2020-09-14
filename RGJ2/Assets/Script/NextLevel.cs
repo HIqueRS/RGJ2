@@ -41,4 +41,23 @@ public class NextLevel : MonoBehaviour
 
        
     }
+
+    public void Restart()
+    {
+        GameObject instance = Resources.Load<GameObject>("Stages/Stage" + conf.actual_stage);
+
+        if (instance == null)
+        {
+            Debug.Log("EITA");
+        }
+        else
+        {
+            Destroy(actual_stage);
+
+            //actual_stage.SetActive(false);
+
+            actual_stage = Instantiate(instance);
+
+        }
+    }
 }
