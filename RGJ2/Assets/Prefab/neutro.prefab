@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 1344099353242891373}
   - component: {fileID: 1344099353242891666}
   m_Layer: 2
-  m_Name: Flor2
-  m_TagString: Ground
+  m_Name: neutro
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -70,8 +70,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 5f41077ebf7e3944aa868b794ce62719, type: 3}
-  m_Color: {r: 0.98039216, g: 0.8882429, b: 0.5137255, a: 1}
+  m_Sprite: {fileID: 21300000, guid: af9d8cac5d0f63c438f1802f1a23c947, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
