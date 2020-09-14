@@ -156,6 +156,8 @@ public class Movement : MonoBehaviour
             atchoo = true;
             reset.StartUI();
             config.Set_ingame(false);//hmmmm aquii eu já posso passar quem é quem
+
+            config.Set_Achoo(true, (int)player);
         }
 
         if(win.Atualize() == 1)

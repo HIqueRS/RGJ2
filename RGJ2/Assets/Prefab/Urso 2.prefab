@@ -102,6 +102,7 @@ MonoBehaviour:
   sprite_cima: {fileID: 21300000, guid: e582bedb52e93304da4d9f8a3c64ff82, type: 3}
   sprite_baixo: {fileID: 21300000, guid: ab75f3a609bbd2c49ba42138f6d16a7a, type: 3}
   sprite_lado: {fileID: 21300000, guid: 09fd5ec7cc33b4c4cae4461bc5b2a427, type: 3}
+  config: {fileID: 11400000, guid: 138635381741cc14c8e12316a4a6668c, type: 2}
 --- !u!50 &6052693113112761776
 Rigidbody2D:
   serializedVersion: 4

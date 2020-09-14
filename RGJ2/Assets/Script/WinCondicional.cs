@@ -73,6 +73,7 @@ public class WinCondicional : MonoBehaviour
             {
                 ui.SetActive(true);
                 config.Set_ingame(false);
+                config.Set_win(true);
                 return 1;
             }
         }
