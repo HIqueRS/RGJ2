@@ -10,7 +10,7 @@ public class TileFlower : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        active_flower = new bool[2];
+       // active_flower = new bool[2];
     }
 
     // Update is called once per frame
