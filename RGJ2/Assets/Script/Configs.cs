@@ -17,4 +17,21 @@ public class Configs : ScriptableObject
     {
         in_game = boolean;
     }
+
+    public void Set_win(bool boolean)
+    {
+        win = boolean;
+    }
+
+    public void Set_Achoo(bool boolean,int acho)
+    {
+        switch (acho)
+        {
+            case 0: acho_1 = boolean;
+                break;
+            case 1:
+                acho_2 = boolean;
+                break;
+        }
+    }
 }
