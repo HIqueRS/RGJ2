@@ -22,14 +22,20 @@ public class Movement : MonoBehaviour
 
     private WinCondicional win;
 
+    private Passing parent;
+
     private bool wining;
     // Start is called before the first frame update
     void Start()
     {
         finalPosition = transform.position;
 
-        reset = GameObject.FindGameObjectWithTag("Canvas").GetComponent<Reset>();
-        win = GameObject.FindGameObjectWithTag("Canvas").GetComponent<WinCondicional>();
+        //reset = GameObject.FindGameObjectWithTag("Canvas").GetComponent<Reset>();
+        //win = GameObject.FindGameObjectWithTag("Canvas").GetComponent<WinCondicional>();
+
+        parent = transform.parent.GetComponent<Passing>();
+        reset = parent.reset;
+        win = parent.win;
 
         wining = false;
 

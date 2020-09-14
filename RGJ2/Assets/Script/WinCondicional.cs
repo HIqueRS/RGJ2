@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class WinCondicional : MonoBehaviour
 {
-    public GameObject[] Gameobj_tile;
+    //public GameObject[] Gameobj_tile;
     private TileFlower[] tile;
 
     private int flor0;
@@ -12,22 +12,35 @@ public class WinCondicional : MonoBehaviour
 
     public GameObject ui;
 
+    public GameObject PaiDasTile;
+
     // Start is called before the first frame update
     void Start()
     {
         flor0 = 0;
         flor1 = 0;
 
-        Gameobj_tile = GameObject.FindGameObjectsWithTag("Ground");
-
-        tile = new TileFlower[Gameobj_tile.Length];
+        //Gameobj_tile = GameObject.FindGameObjectsWithTag("Ground");
 
 
-        for (int i = 0; i < Gameobj_tile.Length; i++)
+
+
+
+        //for (int i = 0; i < Gameobj_tile.Length; i++)
+        //{
+        //    tile[i] = Gameobj_tile[i].GetComponent<TileFlower>();
+        //}
+
+        // ui = GameObject.FindGameObjectWithTag("Canvas")
+
+        tile = new TileFlower[PaiDasTile.transform.childCount];
+
+        for (int i = 0; i < PaiDasTile.transform.childCount; i++)
         {
-            tile[i] = Gameobj_tile[i].GetComponent<TileFlower>();
+            
+             tile[i] = PaiDasTile.transform.GetChild(i).GetComponent<TileFlower>();
+            
         }
-        
     }
 
     // Update is called once per frame

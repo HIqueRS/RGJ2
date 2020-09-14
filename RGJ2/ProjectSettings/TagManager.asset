@@ -7,6 +7,8 @@ TagManager:
   - Ground
   - Canvas
   - Parede
+  - Controler
+  - Stage
   layers:
   - Default
   - TransparentFX
